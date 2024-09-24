@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import { BellRing, Search } from 'lucide-react'
+import Image from 'next/image'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Bell, Search, Settings, CircleHelp } from 'lucide-react'
 import { Input } from '../ui/input'
+import avatarImg from '@/assets/logoUser/LogoUser.png'
 
 export default function Header() {
 	return (
@@ -34,12 +36,7 @@ export default function Header() {
 					</li>
 				</ul>
 			</nav>
-			{/* <search role='search'>
-				<form method='get' action='/search'>
-					<input type='search' name='search-text' />
-					<button className='icon search'>Search</button>
-				</form>
-			</search> */}
+
 			<div className='relative ml-auto flex-1 md:grow-0'>
 				<Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
 				<Input
@@ -51,25 +48,33 @@ export default function Header() {
 			<div className='icon-office'>
 				<div className='settings'>
 					<button className='icon settings'>
-						<span className='icon' role='img' aria-label='settings'></span>
+						<span className='icon' role='img' aria-label='settings'>
+							<Settings />
+						</span>
 					</button>
 				</div>
 				<div className='question'>
 					<Link href='/' className='icon question'>
-						<span className='icon' role='img' aria-label='question'></span>
+						<span className='icon' role='img' aria-label='question'>
+							<CircleHelp />
+						</span>
 					</Link>
 				</div>
 				<div className='alerts'>
 					<button className='icon alerts'>
-						<BellRing />
+						<Bell />
 					</button>
 				</div>
 				<div className='user-cabinet'>
-					<Link href='/' className='icon cabinet'>
+					<Link href='/' className='icon cabinet flex items-center gap-4'>
 						<Avatar>
-							<AvatarImage src='https://github.com/shadcn.png' />
+							<AvatarImage
+								src='https://github.com/shadcn.png'
+								alt='avatar user'
+							></AvatarImage>
 							<AvatarFallback>HR</AvatarFallback>
 						</Avatar>
+						<Image src={avatarImg} alt='logo user' width={40} height={40} />
 					</Link>
 				</div>
 			</div>
