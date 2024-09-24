@@ -7,37 +7,37 @@ import avatarImg from '@/assets/logoUser/LogoUser.png'
 
 export default function Header() {
 	return (
-		<header>
-			<div className='logo'>
-				<Link href='/'>----Header---</Link>
+		<header className='header flex h-20 justify-items-start'>
+			<div className='logo p-6 mr-7'>
+				<Link href='/pages/home'>Header</Link>
 			</div>
-			<nav>
-				<ul>
-					<li>
-						<Link href='/'>Home</Link>
+			<nav className='w-full'>
+				<ul className='flex items-end h-full'>
+					<li className='p-4'>
+						<Link href='/pages/home'>Home</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/pages/myInfo/timeOff'>My Info</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/'>People</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/'>Hiring</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/'>Reports</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/'>Files</Link>
 					</li>
-					<li>
+					<li className='p-4'>
 						<Link href='/pages/about'>About</Link>
 					</li>
 				</ul>
 			</nav>
 
-			<div className='relative ml-auto flex-1 md:grow-0'>
+			<div className='relative flex-1 md:grow-0 mr-14 mt-8'>
 				<Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
 				<Input
 					type='search'
@@ -45,35 +45,28 @@ export default function Header() {
 					className='w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]'
 				/>
 			</div>
-			<div className='icon-office'>
-				<div className='settings'>
+			<div className='icon-office flex gap-x-4 items-end mt-8'>
+				<div className='settings h-full flex items-end mb-4'>
 					<button className='icon settings'>
 						<span className='icon' role='img' aria-label='settings'>
 							<Settings />
 						</span>
 					</button>
 				</div>
-				<div className='question'>
+				<div className='question h-full flex items-end mb-4'>
 					<Link href='/' className='icon question'>
 						<span className='icon' role='img' aria-label='question'>
 							<CircleHelp />
 						</span>
 					</Link>
 				</div>
-				<div className='alerts'>
+				<div className='alerts h-full flex items-end mb-4'>
 					<button className='icon alerts'>
 						<Bell />
 					</button>
 				</div>
-				<div className='user-cabinet'>
-					<Link href='/' className='icon cabinet flex items-center gap-4'>
-						<Avatar>
-							<AvatarImage
-								src='https://github.com/shadcn.png'
-								alt='avatar user'
-							></AvatarImage>
-							<AvatarFallback>HR</AvatarFallback>
-						</Avatar>
+				<div className='user-cabinet h-full flex items-center w-10 flex items-start'>
+					<Link href='/' className='icon cabinet flex items-center'>
 						<Image src={avatarImg} alt='logo user' width={40} height={40} />
 					</Link>
 				</div>
