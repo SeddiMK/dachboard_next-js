@@ -8,10 +8,10 @@ import avatarImg from '@/assets/logoUser/LogoUser.png'
 export default function Header() {
 	return (
 		<header className='header flex h-20 justify-items-start'>
-			<div className='logo p-6 mr-7'>
-				<Link href='/pages/home'>Header</Link>
+			<div className='logo p-6 mr-7 font-semibold'>
+				<Link href='/pages/home'>HarmonyHR</Link>
 			</div>
-			<nav className='w-full'>
+			<nav className='w-full font-medium text-lg'>
 				<ul className='flex items-end h-full'>
 					<li className='p-4'>
 						<Link href='/pages/home'>Home</Link>

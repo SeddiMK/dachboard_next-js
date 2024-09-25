@@ -3,6 +3,14 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Header from '../components/header/Header'
 
+import { Inter } from 'next/font/google'
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({
+	subsets: ['latin'],
+	display: 'swap',
+})
+
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
 	variable: '--font-geist-sans',
@@ -27,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden pl-2.5 pr-2.5`}
+				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-hidden pl-2.5 pr-2.5`}
 			>
 				<Header />
 				<main className=''>{children}</main>
