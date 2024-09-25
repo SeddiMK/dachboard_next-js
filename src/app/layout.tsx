@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Header from '../components/header/Header'
+import Header from '../components/header'
 
 import { Inter } from 'next/font/google'
+import HeaderMain from '@/components/header-main'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -38,6 +39,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-hidden pl-2.5 pr-2.5`}
 			>
 				<Header />
+				<HeaderMain />
 				<main className=''>{children}</main>
 			</body>
 		</html>

@@ -11,8 +11,10 @@ const config: Config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'select-setting':
-					"url('/src/assets/icons/header/settings/Settings.svg')", // icon
+				'select-setting': "url('~@/assets/icons/header/settings/Settings.svg')", // icon
+			},
+			backgroundSize: {
+				'1r': '1rem',
 			},
 			colors: {
 				background: 'hsl(var(--background))',

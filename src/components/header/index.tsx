@@ -1,39 +1,42 @@
+// import { useState, FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Bell, Search, Settings, CircleHelp } from 'lucide-react'
 import { Input } from '../ui/input'
 import avatarImg from '@/assets/logoUser/LogoUser.png'
+
+import { pagesHeader } from '@/lib/navigation'
+import { twMerge } from 'tailwind-merge'
+import { CurrentPageProvider } from '../currentPageProvider'
 
 export default function Header() {
 	return (
 		<header className='header flex h-20 justify-items-start'>
 			<div className='logo p-6 mr-7 font-semibold'>
-				<Link href='/pages/home'>HarmonyHR</Link>
+				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg'>
 				<ul className='flex items-end h-full'>
-					<li className='p-4'>
-						<Link href='/pages/home'>Home</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/pages/myInfo/timeOff'>My Info</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/'>People</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/'>Hiring</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/'>Reports</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/'>Files</Link>
-					</li>
-					<li className='p-4'>
-						<Link href='/pages/about'>About</Link>
-					</li>
+					{pagesHeader.map(el => (
+						<CurrentPageProvider key={el.name} href={el.href}>
+							<Link
+								href={el.href}
+								className={twMerge(
+									'focus:bg-slate-300/60',
+									// active:bg-slate-300/60
+									'rounded-t-lg',
+									'text-zinc-600',
+									'group-[.active-page]',
+									'text-nowrap',
+									'p-4',
+									'pl-3',
+									'pr-3'
+								)}
+							>
+								{el.label}
+							</Link>
+						</CurrentPageProvider>
+					))}
 				</ul>
 			</nav>
 
