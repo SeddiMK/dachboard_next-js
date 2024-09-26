@@ -5,6 +5,7 @@ import Header from '../components/header'
 
 import { Inter } from 'next/font/google'
 import HeaderMain from '@/components/header-main'
+import HeaderMainMyInfo from '@/components/header-main-my-info'
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
@@ -39,8 +40,12 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-hidden pl-2.5 pr-2.5`}
 			>
 				<Header />
-				<HeaderMain />
-				<main className=''>{children}</main>
+
+				<main className='main'>
+					<section className='header-main h-44 flex items-end justify-center bg-slate-300/60'>
+						<div>{children}</div>
+					</section>
+				</main>
 			</body>
 		</html>
 	)

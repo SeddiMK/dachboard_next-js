@@ -1,3 +1,4 @@
+'use client'
 // import { useState, FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -8,35 +9,72 @@ import avatarImg from '@/assets/logoUser/LogoUser.png'
 import { pagesHeader } from '@/lib/navigation'
 import { twMerge } from 'tailwind-merge'
 import { CurrentPageProvider } from '../currentPageProvider'
+import { toggleBg, toggleBgHeader } from '@/lib/utils'
 
 export default function Header() {
+	// <Link
+	// 						href={el.href}
+	// 						className={twMerge(
+	// 							'focus:bg-slate-300/60',
+	// 							// active:bg-slate-300/60
+	// 							'rounded-t-lg',
+	// 							'text-zinc-600',
+	// 							'group-[.active-page]',
+	// 							'text-nowrap',
+	// 							'p-4',
+	// 							'pl-3',
+	// 							'pr-3'
+	// 						)}
+	// 					></Link>
 	return (
 		<header className='header flex h-20 justify-items-start'>
 			<div className='logo p-6 mr-7 font-semibold'>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg'>
-				<ul className='flex items-end h-full'>
-					{pagesHeader.map(el => (
-						<CurrentPageProvider key={el.name} href={el.href}>
-							<Link
-								href={el.href}
-								className={twMerge(
-									'focus:bg-slate-300/60',
-									// active:bg-slate-300/60
-									'rounded-t-lg',
-									'text-zinc-600',
-									'group-[.active-page]',
-									'text-nowrap',
-									'p-4',
-									'pl-3',
-									'pr-3'
-								)}
-							>
-								{el.label}
-							</Link>
-						</CurrentPageProvider>
-					))}
+				<ul id='header' className='flex items-end h-full'>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/pages/home'>Home</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/pages/myInfo'>My Info</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/people'>People</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/hiring'>Hiring</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/reports'>Reports</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/files'>Files</Link>
+					</li>
+					<li
+						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+						onClick={e => toggleBgHeader(e)}
+					>
+						<Link href='/pages/about'>About</Link>
+					</li>
 				</ul>
 			</nav>
 
