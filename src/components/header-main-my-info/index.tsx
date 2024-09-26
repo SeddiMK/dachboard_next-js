@@ -12,8 +12,8 @@ import { toggleBgHeaderMain } from '@/lib/utils'
 
 export default function HeaderMainMyInfo() {
 	return (
-		<div className='my-info '>
-			<div className='header-main__avatar-img w-auto h-auto mr-16'>
+		<div className='my-info flex items-end justify-center'>
+			<div className='header-main__avatar-img w-36 h-auto mr-16'>
 				<Link href='/' className='icon cabinet flex items-center'>
 					<Image src={avatarImg} alt='logo user' width={140} height={140} />
 				</Link>
@@ -90,55 +90,55 @@ export default function HeaderMainMyInfo() {
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Personal</Link>
+							<Link href='/pages/myInfo'>Personal</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Job</Link>
+							<Link href='/pages/myInfo'>Job</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Time Off</Link>
+							<Link href='/pages/myInfo'>Time Off</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Emergency</Link>
+							<Link href='/pages/myInfo'>Emergency</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Documents</Link>
+							<Link href='/pages/myInfo'>Documents</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Notes</Link>
+							<Link href='/pages/myInfo'>Notes</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Benefits</Link>
+							<Link href='/pages/myInfo'>Benefits</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Training</Link>
+							<Link href='/pages/myInfo'>Training</Link>
 						</li>
 						<li
 							className='p-4 rounded-t-lg text-nowrap'
 							onClick={e => toggleBgHeaderMain(e)}
 						>
-							<Link href='/pages/home'>Assets</Link>
+							<Link href='/pages/myInfo'>Assets</Link>
 						</li>
 						<li className='link-li select p-4'>
 							<select

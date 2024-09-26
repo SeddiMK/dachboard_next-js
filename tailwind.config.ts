@@ -11,7 +11,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'select-setting': "url('~@/assets/icons/header/settings/Settings.svg')", // icon
+				'select-setting': "url('~@/assets/icons/Settings.svg')", // icon
 			},
 			backgroundSize: {
 				'1r': '1rem',
