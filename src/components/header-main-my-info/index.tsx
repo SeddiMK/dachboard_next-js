@@ -11,11 +11,18 @@ import clsx from 'clsx'
 import { toggleBgHeaderMain } from '@/lib/utils'
 
 export default function HeaderMainMyInfo() {
+	// absolute top-[-20px] left-0 z-50
 	return (
-		<div className='my-info flex items-end justify-center'>
-			<div className='header-main__avatar-img w-36 h-auto mr-16'>
-				<Link href='/' className='icon cabinet flex items-center'>
-					<Image src={avatarImg} alt='logo user' width={140} height={140} />
+		<div className='my-info flex items-end justify-center '>
+			<div className='header-main__avatar-img w-36 h-auto mr-16 '>
+				<Link href='/' className='icon cabinet flex items-center '>
+					<Image
+						className=' '
+						src={avatarImg}
+						alt='logo user'
+						width={140}
+						height={140}
+					/>
 				</Link>
 			</div>
 

@@ -41,7 +41,7 @@ export default function RootLayout({
 			>
 				<Header />
 
-				<main className='main'>
+				<main className='main '>
 					<section className='header-main h-44 flex items-end justify-center bg-slate-300/60'></section>
 					<div className='wrp w-full'>{children}</div>
 				</main>
