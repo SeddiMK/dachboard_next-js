@@ -37,14 +37,15 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-hidden pl-2.5 pr-2.5`}
+				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-hidden pl-2.5 pr-2.5 flex flex-col justify-start items-center`}
 			>
-				<Header />
-
-				<main className='main '>
-					<section className='header-main h-44 flex items-end justify-center bg-slate-300/60'></section>
-					<div className='wrp w-full'>{children}</div>
-				</main>
+				<div className='wrapper max-w-[1440px]'>
+					<Header />
+					<main className='main '>
+						<section className='header-main h-44 flex items-end justify-center bg-slate-300/60'></section>
+						<div className='wrp w-full'>{children}</div>
+					</main>
+				</div>
 			</body>
 		</html>
 	)

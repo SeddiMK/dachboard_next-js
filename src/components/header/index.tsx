@@ -27,7 +27,7 @@ export default function Header() {
 	// 						)}
 	// 					></Link>
 	return (
-		<header className='header flex h-20 justify-items-start'>
+		<header className='header flex h-20 justify-start items-end '>
 			<div className='logo p-6 mr-7 font-semibold'>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
