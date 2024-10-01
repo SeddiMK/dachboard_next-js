@@ -16,7 +16,7 @@ import Company from '@/assets/icons/Company.svg'
 export const AsideContacts = () => {
 	// FCFCFE
 	return (
-		<div className='flex flex-col gap-4 items-start p-6 bg-[#57579b] rounded-xl mb-4'>
+		<div className='flex flex-col gap-4 items-start p-6 bg-[#FCFCFE] rounded-xl mb-4'>
 			<p className='tel flex  gap-2 items-center'>
 				<span>
 					<Phone />

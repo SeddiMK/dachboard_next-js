@@ -27,8 +27,8 @@ export default function Header() {
 	// 						)}
 	// 					></Link>
 	return (
-		<header className='header flex h-20 justify-start items-end '>
-			<div className='logo p-6 mr-7 font-semibold'>
+		<header className='header flex h-20 justify-start items-end pr-6'>
+			<div className='header__logo p-6 mr-7 font-semibold'>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg'>
@@ -78,7 +78,7 @@ export default function Header() {
 				</ul>
 			</nav>
 
-			<div className='relative flex-1 md:grow-0 mr-14 mt-8'>
+			<div className='header__search relative flex-1 md:grow-0 mr-14 mt-8 mb-4'>
 				<Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
 				<Input
 					type='search'
@@ -86,22 +86,22 @@ export default function Header() {
 					className='w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]'
 				/>
 			</div>
-			<div className='icon-office flex gap-x-4 items-end mt-8'>
-				<div className='settings h-full flex items-end mb-4'>
+			<div className='header__icon-office flex gap-x-4 items-end mt-8 mb-4'>
+				<div className='settings h-full flex items-end mb-2'>
 					<button className='icon settings'>
 						<span className='icon' role='img' aria-label='settings'>
 							<Settings />
 						</span>
 					</button>
 				</div>
-				<div className='question h-full flex items-end mb-4'>
+				<div className='question h-full flex items-end mb-2'>
 					<Link href='/' className='icon question'>
 						<span className='icon' role='img' aria-label='question'>
 							<CircleHelp />
 						</span>
 					</Link>
 				</div>
-				<div className='alerts h-full flex items-end mb-4'>
+				<div className='alerts h-full flex items-end mb-2'>
 					<button className='icon alerts'>
 						<Bell />
 					</button>

@@ -13,21 +13,9 @@ import { toggleBgHeaderMain } from '@/lib/utils'
 export default function HeaderMainMyInfo() {
 	// absolute top-[-20px] left-0 z-50
 	return (
-		<div className='my-info flex items-end justify-center ml-[16.5rem]'>
-			{/* <div className='header-main__avatar-img w-36 h-auto mr-16 '>
-				<Link href='/' className='icon cabinet flex items-center '>
-					<Image
-						className=' '
-						src={avatarImg}
-						alt='logo user'
-						width={140}
-						height={140}
-					/>
-				</Link>
-			</div> */}
-
+		<div className='my-info flex items-end justify-between '>
 			<div className='header-main__navigate navigate-main h-full flex flex-col justify-end'>
-				<div className='navigate-main__name-main flex justify-between mb-6'>
+				<div className='navigate-main__name-main flex justify-between mb-6 w-full'>
 					<div className='navigate-main__name text-2xl font-semibold'>
 						Alexandra Kuibyshevskaya
 					</div>
