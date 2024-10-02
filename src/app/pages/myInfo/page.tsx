@@ -21,7 +21,7 @@ export default function TimeOffPage() {
 				<HeaderMainMyInfo />
 			</div> */}
 
-			<div className='container-body relative top-[70px] left-0 w-full flex justify-between items-start '>
+			<div className='container-body relative z-50 top-[58px] left-0 w-full flex justify-between items-start pt-3'>
 				<aside className='aside-my-info relative -top-[50px] text-sm font-medium mr-6 '>
 					<div className='aside-my-info__avatar-img relative z-10 top-[14px] w-36 h-auto flex justify-center items-end w-full'>
 						{/* <Link href='/pages/myInfo' className='flex items-center '></Link> */}
@@ -43,7 +43,7 @@ export default function TimeOffPage() {
 					</div>
 				</aside>
 
-				<div className='w-4/5 bg-slate-500 max-w-[1047px] w-full px-4 relative '>
+				<div className='w-4/5 max-w-[1047px] w-full relative '>
 					<HeaderMainMyInfo />
 					<TimeOff />
 				</div>

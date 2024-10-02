@@ -12,20 +12,6 @@ import { CurrentPageProvider } from '../currentPageProvider'
 import { toggleBg, toggleBgHeader } from '@/lib/utils'
 
 export default function Header() {
-	// <Link
-	// 						href={el.href}
-	// 						className={twMerge(
-	// 							'focus:bg-slate-300/60',
-	// 							// active:bg-slate-300/60
-	// 							'rounded-t-lg',
-	// 							'text-zinc-600',
-	// 							'group-[.active-page]',
-	// 							'text-nowrap',
-	// 							'p-4',
-	// 							'pl-3',
-	// 							'pr-3'
-	// 						)}
-	// 					></Link>
 	return (
 		<header className='header flex h-20 justify-start items-end pr-6'>
 			<div className='header__logo p-6 mr-7 font-semibold'>
