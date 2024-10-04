@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import HeaderMain from '@/components/header-main'
 import HeaderMainMyInfo from '@/components/header-main-my-info'
 import {
@@ -8,7 +7,6 @@ import {
 	AsideReportsDirect,
 } from '@/components/ui/aside'
 import { Link } from 'lucide-react'
-import avatarImg from '@/assets/logoUser/LogoUser.png'
 import TimeOff from '@/components/time-off'
 
 // <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
@@ -22,26 +20,7 @@ export default function TimeOffPage() {
 			</div> */}
 
 			<div className='container-body relative z-50 top-[58px] left-0 w-full flex justify-between items-start pt-3'>
-				<aside className='aside-my-info relative -top-[50px] text-sm font-medium mr-6 '>
-					<div className='aside-my-info__avatar-img relative z-10 top-[14px] w-36 h-auto flex justify-center items-end w-full'>
-						{/* <Link href='/pages/myInfo' className='flex items-center '></Link> */}
-						<a href='/pages/myInfo'>
-							<Image
-								className='img '
-								src={avatarImg}
-								alt='logo user'
-								width={140}
-								height={140}
-							/>
-						</a>
-					</div>
-					<div className='aside-my-info-block '>
-						<AsideContacts />
-						<AsideDate />
-						<AsidePosition />
-						<AsideReportsDirect />
-					</div>
-				</aside>
+				<AsideMyInfo />
 
 				<div className='w-4/5 max-w-[1047px] w-full relative '>
 					<HeaderMainMyInfo />
