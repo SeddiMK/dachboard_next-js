@@ -1,15 +1,12 @@
 'use client'
-// import { useState, FC } from 'react'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Bell, Search, Settings, CircleHelp } from 'lucide-react'
 import { Input } from '../ui/input'
 import avatarImg from '@/assets/logoUser/LogoUser.png'
 
-import { pagesHeader } from '@/lib/navigation'
-import { twMerge } from 'tailwind-merge'
-import { CurrentPageProvider } from '../currentPageProvider'
-import { toggleBg, toggleBgHeader } from '@/lib/utils'
+import { toggleBgHeader } from '@/lib/utils'
 
 export default function Header() {
 	return (
