@@ -10,12 +10,12 @@ import { toggleBgHeader } from '@/lib/utils'
 
 export default function Header() {
 	return (
-		<header className='header flex h-20 justify-start items-end pr-6'>
+		<header className='header flex sm:flex-col sm:justify-start sm:items-center h-20  2xl:justify-start 2xl:items-end pr-6'>
 			<div className='header__logo p-6 mr-7 font-semibold'>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg'>
-				<ul id='header' className='flex items-end h-full'>
+				<ul id='header  ' className='flex items-end h-full'>
 					<li
 						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
 						onClick={e => toggleBgHeader(e)}
