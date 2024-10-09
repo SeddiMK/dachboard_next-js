@@ -13,7 +13,7 @@ import { toggleBgHeaderMain } from '@/lib/utils'
 export default function HeaderMainMyInfo() {
 	// absolute top-[-20px] left-0 z-50
 	return (
-		<div className='my-info flex items-end justify-between '>
+		<div className='my-info flex items-end justify-between pt-16'>
 			<div className='header-main__navigate navigate-main h-full flex flex-col justify-end'>
 				<div className='navigate-main__name-main  flex justify-between mb-3 w-full'>
 					<div className='navigate-main__name text-2xl font-semibold'>
@@ -56,7 +56,7 @@ export default function HeaderMainMyInfo() {
 				<nav className='w-full '>
 					<ul
 						id='header-main'
-						className='flex justify-between items-end h-full'
+						className='flex justify-between items-end flex-wrap h-full'
 					>
 						{/* {pagesUserCab.map(el => (
 							<CurrentPageProvider key={el.name} href={el.href}>

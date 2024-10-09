@@ -8,7 +8,7 @@ import TimeOffIcon from '@/assets/icons/timeOff.svg'
 export default function Cards() {
 	return (
 		<div className='upcoming-time pt-6 pb-4 border-b-[2px] border-[#7C96B1]'>
-			<div className='upcoming-time__cards cards font-semibold text-sm flex justify-center items-center gap-12 mb-6'>
+			<div className='upcoming-time__cards cards font-semibold text-sm flex justify-center items-center flex-wrap gap-12 mb-6'>
 				<div className='card-item w-[264px]   flex flex-col justify-center items-center '>
 					<div className='card-item__main w-full p-4 mb-2 bg-[#F0F3F8] item-card flex flex-col justify-center items-center gap-1'>
 						<h2 className='item-card__title text-xl'>Sick</h2>

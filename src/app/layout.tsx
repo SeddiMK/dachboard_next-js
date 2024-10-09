@@ -14,12 +14,12 @@ const inter = Inter({
 })
 
 const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
+	src: '../assets/fonts/GeistVF.woff',
 	variable: '--font-geist-sans',
 	weight: '100 900',
 })
 const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
+	src: '../assets/fonts/GeistMonoVF.woff',
 	variable: '--font-geist-mono',
 	weight: '100 900',
 })
@@ -39,11 +39,16 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased overflow-x-hidden px-4.5 flex flex-col justify-start items-center`}
 			>
+				{/* <HeaderMain /> */}
 				<div className='wrapper  max-w-[1440px]'>
-					<Header />
+					{/* <Header /> */}
+					{/* <HeaderMain /> */}
 					<main className='main '>
-						<HeaderMain />
-						<div className='wrp w-full bg-[#F0F3F8]'>{children}</div>
+						<Header />
+						<div className='wrp w-full bg-[#F0F3F8] relative top-0 left-0'>
+							<section className='header-main w-full absolute h-[184px] flex items-end justify-center bg-slate-300/60 border-b-2 border-black'></section>
+							{children}
+						</div>
 					</main>
 				</div>
 			</body>
