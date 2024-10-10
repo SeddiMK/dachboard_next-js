@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import TimeOffIcon from '@/assets/icons/timeOff.svg'
-import Header from '../header'
-import HeaderMain from '../header-main'
-// <Header />
-// 		<HeaderMain />
+
 export default function TimeOffBodyTop() {
 	return (
 		<>
@@ -22,7 +19,7 @@ export default function TimeOffBodyTop() {
 							Time Off
 						</h3>
 					</div>
-					<div className='top-title__level-start level-start flex items-center'>
+					<div className='top-title__level-start level-start flex wrap items-center '>
 						<div className='level-start__date mr-[30px]'>
 							<span className='level-start__text mr-1'>
 								Accrual Level Start Date

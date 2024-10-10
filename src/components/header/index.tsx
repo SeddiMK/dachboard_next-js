@@ -18,8 +18,8 @@ export default function Header() {
 	// const[ menuLi, setMenuLi] = useState({})
 
 	return (
-		<header className='header w-full sm:flex  sm:flex-col sm:justify-start sm:items-center xl:flex-row  xl:justify-start xl:items-end '>
-			<div className='header__logo p-6 font-semibold  order-1 xl:mr-7 '>
+		<header className='header w-full flex px-6 justify-between items-center flex-row lg:flex-col  xl:flex-row  xl:justify-start xl:items-end '>
+			<div className='header__logo py-6 font-semibold  order-1 xl:mr-7 '>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg hidden  lg:block  lg:order-3 xl:visible xl:order-2 '>
@@ -72,7 +72,7 @@ export default function Header() {
 				</ul>
 			</nav>
 
-			<div className='header__search relative   gap-4 hidden lg:flex lg:order-2 xl:visible xl:order-3 sm:items-center   flex-1 sm:grow-0 xl:mr-14 xl:mt-8 mb-4 '>
+			<div className='header__search relative   gap-4 hidden lg:flex lg:order-2 xl:visible xl:order-3 sm:items-center   flex-1 sm:grow-0  xl:mt-8 mb-4 '>
 				<Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
 				<Input
 					type='search'
@@ -99,7 +99,7 @@ export default function Header() {
 							<Bell />
 						</button>
 					</div>
-					<div className='user-cabinet h-full flex items-center w-10 flex items-start mr-6'>
+					<div className='user-cabinet h-full flex items-center w-10 flex items-start'>
 						<Link href='/' className='icon cabinet flex items-center'>
 							<Image src={avatarImg} alt='logo user' width={40} height={40} />
 						</Link>
