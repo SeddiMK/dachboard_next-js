@@ -9,25 +9,26 @@ import {
 
 export default function AsideMyInfo() {
 	return (
-		<aside className='aside-my-info  text-sm font-medium mx-6 '>
-			<div className='aside-my-info__avatar-img relative z-10 top-[14px] w-36 h-auto flex justify-center items-end w-full'>
+		<div className='aside-my-info  relative z-10 top-1/2 md:top-[14px] text-sm font-medium mx-6    flex flex-col items-center'>
+			<div className='aside-my-info__avatar-img w-14 pt-8 md:pt-0 md:w-[140px]  h-auto flex justify-center items-end '>
 				{/* <Link href='/pages/myInfo' className='flex items-center '></Link> */}
-				<a href='/pages/myInfo'>
+				<a href='/pages/myInfo' className='w-full relative pt-[100%]'>
 					<Image
-						className='img '
+						className='img w-full h-full top-0 left-0 object-cover rounded-2xl'
+						sizes='(max-width: 140px) 100vw, (max-width: 56px) 50vw, 33vw'
 						src={avatarImg}
 						alt='logo user'
-						width={140}
-						height={140}
+						objectFit='cover'
+						fill={true}
 					/>
 				</a>
 			</div>
-			<div className='aside-my-info-block '>
+			<aside className='aside-my-info-block hidden  md:block'>
 				<AsideContacts />
 				<AsideDate />
 				<AsidePosition />
 				<AsideReportsDirect />
-			</div>
-		</aside>
+			</aside>
+		</div>
 	)
 }

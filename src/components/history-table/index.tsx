@@ -1,5 +1,9 @@
 import Image from 'next/image'
+import { historyUser } from '@/lib/history'
+import { MoveDown } from 'lucide-react'
 import Pig from '@/assets/icons/Pig.svg'
+
+import { Select, Option } from '@material-tailwind/react'
 
 import {
 	Table,
@@ -11,51 +15,6 @@ import {
 	TableHeader,
 	TableRow,
 } from '@/components/ui/table'
-
-const invoices = [
-	{
-		invoice: 'INV001',
-		paymentStatus: 'Paid',
-		totalAmount: '$250.00',
-		paymentMethod: 'Credit Card',
-	},
-	{
-		invoice: 'INV002',
-		paymentStatus: 'Pending',
-		totalAmount: '$150.00',
-		paymentMethod: 'PayPal',
-	},
-	{
-		invoice: 'INV003',
-		paymentStatus: 'Unpaid',
-		totalAmount: '$350.00',
-		paymentMethod: 'Bank Transfer',
-	},
-	{
-		invoice: 'INV004',
-		paymentStatus: 'Paid',
-		totalAmount: '$450.00',
-		paymentMethod: 'Credit Card',
-	},
-	{
-		invoice: 'INV005',
-		paymentStatus: 'Paid',
-		totalAmount: '$550.00',
-		paymentMethod: 'PayPal',
-	},
-	{
-		invoice: 'INV006',
-		paymentStatus: 'Pending',
-		totalAmount: '$200.00',
-		paymentMethod: 'Bank Transfer',
-	},
-	{
-		invoice: 'INV007',
-		paymentStatus: 'Unpaid',
-		totalAmount: '$300.00',
-		paymentMethod: 'Credit Card',
-	},
-]
 
 export default function HistoryTable() {
 	return (
@@ -74,11 +33,11 @@ export default function HistoryTable() {
 				<span className='history__txt'>History</span>
 			</div>
 
-			<div className='history__select-top relative select-top w-full flex justify-between mb-4'>
-				<div className='flex gap-4 '>
-					<span className='block absolute top-[9px] left-[211px] font-bold'>
+			<div className='history__select-top relative select-top w-full flex flex-wrap justify-between mb-4'>
+				<div className='flex gap-4 flex-wrap mr-4 mb-4 lg:mb-0'>
+					{/* <span className='block absolute top-[9px] left-[211px] font-bold'>
 						X
-					</span>
+					</span> */}
 					<select
 						name='sick'
 						id='sick'
@@ -92,9 +51,9 @@ export default function HistoryTable() {
 						<option value='spider'>Spider</option>
 						<option value='goldfish'>Goldfish</option>
 					</select>
-					<span className='block absolute top-[9px] left-[330px] font-bold'>
+					{/* <span className='block absolute top-[9px] left-[330px] font-bold'>
 						X
-					</span>
+					</span> */}
 					<select
 						name='all'
 						id='all'
@@ -112,7 +71,7 @@ export default function HistoryTable() {
 				<select
 					name='balanceHistory'
 					id='balance-history'
-					className='relative rounded-lg  w-44 p-2 bg-inherit border-slate-400 border-2 '
+					className=' relative rounded-lg  w-44 h-[38.72px] p-2 bg-inherit border-slate-400 border-2 '
 				>
 					<option value='Sick'>Balance History</option>
 					<option value='dog'>Dog</option>
@@ -121,10 +80,11 @@ export default function HistoryTable() {
 					<option value='parrot'>Parrot</option>
 					<option value='spider'>Spider</option>
 					<option value='goldfish'>Goldfish</option>
-				</select>{' '}
-				<span className='block absolute top-[9px] right-[30px] font-bold'>
+				</select>
+
+				{/* <span className='block absolute top-[9px] right-[30px] font-bold'>
 					X
-				</span>
+				</span> */}
 			</div>
 
 			{/* <table className='history__table table-history table-fixed w-full'>
@@ -193,36 +153,38 @@ export default function HistoryTable() {
 						<td className='balance'>3.00</td>
 					</tr>
 				</tbody>
-			</table> */}
+			</table>  */}
 
 			<Table>
 				{/* <TableCaption>A list of your recent invoices.</TableCaption> */}
 				<TableHeader>
 					<TableRow>
-						<TableHead className='w-[100px]'>Invoice</TableHead>
-						<TableHead>Status</TableHead>
-						<TableHead>Method</TableHead>
-						<TableHead className='text-right'>Amount</TableHead>
+						<TableHead className='w-[100px] flex'>
+							Date <MoveDown />
+						</TableHead>
+						<TableHead>Description</TableHead>
+						<TableHead>Used Days (-)</TableHead>
+						<TableHead className=''>Earned Days (+)</TableHead>
+						<TableHead className=''>Balance</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{invoices.map(invoice => (
-						<TableRow key={invoice.invoice}>
-							<TableCell className='font-medium'>{invoice.invoice}</TableCell>
-							<TableCell>{invoice.paymentStatus}</TableCell>
-							<TableCell>{invoice.paymentMethod}</TableCell>
-							<TableCell className='text-right'>
-								{invoice.totalAmount}
-							</TableCell>
+					{historyUser.map((el, ind) => (
+						<TableRow key={el.dateHistory + ind}>
+							<TableCell className='font-medium'>{el.dateHistory}</TableCell>
+							<TableCell>{el.description}</TableCell>
+							<TableCell>{el.usedDays}</TableCell>
+							<TableCell>{el.earnedDays}</TableCell>
+							<TableCell>{el.balance}</TableCell>
 						</TableRow>
 					))}
 				</TableBody>
-				<TableFooter>
+				{/* <TableFooter>
 					<TableRow>
 						<TableCell colSpan={3}>Total</TableCell>
 						<TableCell className='text-right'>$2,500.00</TableCell>
 					</TableRow>
-				</TableFooter>
+				</TableFooter> */}
 			</Table>
 		</div>
 	)

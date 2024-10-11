@@ -1,6 +1,17 @@
+export interface PagesHeader {
+	name: string
+	href: string
+	label: string
+}
+export interface PagesUserCab {
+	name: string
+	href: string
+	label: string
+}
+
 export const pagesHeader = [
 	{ name: 'Home', href: '/', label: 'Home' },
-	{ name: 'My-Info', href: '/pages/myInfo/timeOff', label: 'My Info' },
+	{ name: 'My-Info', href: '/pages/myInfo', label: 'My Info' },
 	{ name: 'People', href: '/people', label: 'People' },
 	{ name: 'Hiring', href: '/hiring', label: 'Hiring' },
 	{ name: 'Reports', href: '/reports', label: 'Reports' },
@@ -10,7 +21,7 @@ export const pagesHeader = [
 
 export const pagesUserCab = [
 	{ name: 'Personal', href: '/', label: 'Personal' },
-	{ name: 'Job', href: '/pages/myInfo/timeOff', label: 'Job' },
+	{ name: 'Job', href: '/pages/myInfo', label: 'Job' },
 	{ name: 'Time-Off', href: '/people', label: 'Time Off' },
 	{ name: 'Emergency', href: '/hiring', label: 'Emergency' },
 	{ name: 'Documents', href: '/reports', label: 'Documents' },

@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { Bell, Search, Settings, CircleHelp } from 'lucide-react'
@@ -11,15 +9,12 @@ import avatarImg from '@/assets/logoUser/LogoUser.png'
 import { toggleBgHeader } from '@/lib/utils'
 import { MenuBerger } from '../burger'
 import { pagesHeader } from '@/lib/navigate'
-
-const nameMenuHeader = pagesHeader.map(pagesHeader => pagesHeader.name)
+import { SheetTitle } from '../ui/sheet'
 
 export default function Header() {
-	// const[ menuLi, setMenuLi] = useState({})
-
 	return (
 		<header className='header w-full flex px-6 justify-between items-center flex-row lg:flex-col  xl:flex-row  xl:justify-start xl:items-end '>
-			<div className='header__logo py-6 font-semibold  order-1 xl:mr-7 '>
+			<div className='header__logo py-6 font-semibold text-xl order-1 xl:mr-7 '>
 				<Link href='/'>HarmonyHR</Link>
 			</div>
 			<nav className='w-full font-medium text-lg hidden  lg:block  lg:order-3 xl:visible xl:order-2 '>
@@ -27,7 +22,16 @@ export default function Header() {
 					id='header'
 					className='flex sm:items-center sm:justify-center items-end  h-full'
 				>
-					<li
+					{pagesHeader.map((el, ind) => (
+						<li
+							key={el.name + ind}
+							className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
+							onClick={e => toggleBgHeader(e)}
+						>
+							<Link href={el.href}>{el.name}</Link>
+						</li>
+					))}
+					{/* <li
 						className='p-4 pl-3 pr-3 rounded-t-lg text-nowrap'
 						onClick={e => toggleBgHeader(e)}
 					>
@@ -68,7 +72,7 @@ export default function Header() {
 						onClick={e => toggleBgHeader(e)}
 					>
 						<Link href='../pages/about'>About</Link>
-					</li>
+					</li> */}
 				</ul>
 			</nav>
 
@@ -107,7 +111,7 @@ export default function Header() {
 				</div>
 			</div>
 			<div className='menu-burger  order-2 block lg:hidden '>
-				<MenuBerger nameMenuHeader={nameMenuHeader} />
+				<MenuBerger />
 			</div>
 		</header>
 	)

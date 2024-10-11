@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { pagesUserCab } from '@/lib/navigation'
+import { pagesUserCab } from '@/lib/navigate'
 import avatarImg from '@/assets/logoUser/LogoUser.png'
 import { CurrentPageProvider } from '../currentPageProvider'
 import { twMerge } from 'tailwind-merge'
@@ -11,15 +11,14 @@ import clsx from 'clsx'
 import { toggleBgHeaderMain } from '@/lib/utils'
 
 export default function HeaderMainMyInfo() {
-	// absolute top-[-20px] left-0 z-50
 	return (
-		<div className='my-info flex items-end justify-between pt-16'>
+		<div className='my-info flex items-end justify-between pt-10  lg:pt-14'>
 			<div className='header-main__navigate navigate-main h-full flex flex-col justify-end'>
-				<div className='navigate-main__name-main  flex justify-between mb-3 w-full'>
-					<div className='navigate-main__name text-2xl font-semibold'>
+				<div className='navigate-main__name-main  flex justify-between mb-9  lg:mb-3   w-full'>
+					<div className='navigate-main__name text-xl sm:text-2xl font-semibold mr-11'>
 						Alexandra Kuibyshevskaya
 					</div>
-					<div className='navigate-main__main flex gap-x-4'>
+					<div className='navigate-main__main flex flex-wrap gap-4 gap-x-4 justify-center'>
 						<div className='navigate-main__req-change'>
 							<select
 								name='pets'
@@ -39,7 +38,7 @@ export default function HeaderMainMyInfo() {
 							<select
 								name='pets'
 								id='pet-select'
-								className='rounded-lg w-14 h-9 bg-inherit border-slate-400 border-2 bg-select-setting bg-1r bg-[center_left_0.55rem] bg-no-repeat'
+								className='rounded-lg w-14 h-[40.54px] bg-inherit border-slate-400 border-2 bg-select-setting bg-1r bg-[center_left_0.55rem] bg-no-repeat'
 							>
 								<option value='klk'></option>
 								<option value='dog'>Dog</option>
@@ -58,90 +57,23 @@ export default function HeaderMainMyInfo() {
 						id='header-main'
 						className='flex justify-between items-end flex-wrap h-full'
 					>
-						{/* {pagesUserCab.map(el => (
-							<CurrentPageProvider key={el.name} href={el.href}>
-								<Link
-									href={el.href}
-									className={twMerge(
-										clsx(
-											// ${isActive ? 'focus:bg-slate-300/60':''}
-											// 'focus:bg-slate-300/60',
-											// 'active:bg-slate-300/60',
-											'rounded-t-lg text-zinc-600 group-[.active-page] text-nowrap p-4 pl-3 pr-3',
-											{
-												'bg-slate-300/60': isActive,
-												'bg-slate-300/60': !isActive,
-											}
-										)
-									)}
-									onClick={() => setIsActive(!isActive)}
-								>
-									{el.label}
-								</Link>
-							</CurrentPageProvider>
-						))} */}
+						{pagesUserCab.map((el, ind) => (
+							<li
+								className='p-4 rounded-t-lg text-nowrap'
+								key={el.name + ind}
+								onClick={e => toggleBgHeaderMain(e)}
+							>
+								<Link href='/pages/myInfo'>Personal</Link>
+							</li>
+						))}
 
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Personal</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Job</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Time Off</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Emergency</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Documents</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Notes</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Benefits</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Training</Link>
-						</li>
-						<li
-							className='p-4 rounded-t-lg text-nowrap'
-							onClick={e => toggleBgHeaderMain(e)}
-						>
-							<Link href='/pages/myInfo'>Assets</Link>
-						</li>
-						<li className='link-li select p-4'>
+						<li className='link-li select p-4  '>
 							<select
 								name='pets'
 								id='pet-select'
-								className='rounded-sm w-16 bg-inherit'
+								className='rounded-sm w-full bg-inherit '
 							>
-								<option value=''>More</option>
+								<option value='more'>More</option>
 								<option value='dog'>Dog</option>
 								<option value='cat'>Cat</option>
 								<option value='hamster'>Hamster</option>
