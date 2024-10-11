@@ -41,8 +41,7 @@ export default function RootLayout({
 			>
 				<div className='wrapper  max-w-[1440px]'>
 					<main className='main '>
-						<Header />
-						<div className='wrp w-full bg-[#F0F3F8] relative top-0 left-0'>
+						<div className='wrp w-full '>
 							{/* <div className='header-main w-full absolute  h-[184px] flex items-end justify-center bg-slate-300/60 border-b-2 border-black'></div> */}
 							{children}
 						</div>

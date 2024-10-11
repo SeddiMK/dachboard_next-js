@@ -1,4 +1,4 @@
-export interface HistoryUser {
+export interface TypeHistoryUser {
 	dateHistory: string
 	description: string
 	usedDays: string

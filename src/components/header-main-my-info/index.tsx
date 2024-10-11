@@ -14,7 +14,7 @@ export default function HeaderMainMyInfo() {
 	return (
 		<div className='my-info flex items-end justify-between pt-10  lg:pt-14'>
 			<div className='header-main__navigate navigate-main h-full flex flex-col justify-end'>
-				<div className='navigate-main__name-main  flex justify-between mb-9  lg:mb-3   w-full'>
+				<div className='navigate-main__name-main  flex justify-between mb-9  lg:mb-[18px]   w-full'>
 					<div className='navigate-main__name text-xl sm:text-2xl font-semibold mr-11'>
 						Alexandra Kuibyshevskaya
 					</div>

@@ -105,7 +105,7 @@ export default function Header() {
 					</div>
 					<div className='user-cabinet h-full flex items-center w-10 flex items-start'>
 						<Link href='/' className='icon cabinet flex items-center'>
-							<Image src={avatarImg} alt='logo user' width={40} height={40} />
+							<Image src={avatarImg} alt='user avatar' width={40} height={40} />
 						</Link>
 					</div>
 				</div>

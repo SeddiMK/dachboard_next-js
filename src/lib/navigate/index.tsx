@@ -1,9 +1,9 @@
-export interface PagesHeader {
+export interface TypePagesHeader {
 	name: string
 	href: string
 	label: string
 }
-export interface PagesUserCab {
+export interface TypePagesUserCab {
 	name: string
 	href: string
 	label: string
