@@ -77,12 +77,6 @@ export const description =
 	'An orders dashboard with a sidebar navigation. The sidebar has icon navigation. The content area has a breadcrumb and search in the header. The main area has a list of recent orders with a filter and export button. The main area also has a detailed view of a single order with order details, shipping information, billing information, customer information, and payment information.'
 
 export default function MainBody() {
-	// console.log(process.env.CUSTOM_KEY, 'process.env.CUSTOM_KEY') !!!!
-	// console.log(
-	// 	process.env.NEXT_APP_IDENTITY_URL,
-	// 	'process.env.NEXT_APP_IDENTITY_URL'
-	// )
-
 	return (
 		<section className='main-body'>
 			<div className='flex min-h-screen w-full flex-col bg-muted/40'>
