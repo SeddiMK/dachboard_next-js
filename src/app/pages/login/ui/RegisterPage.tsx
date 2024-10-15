@@ -1,6 +1,3 @@
-import { input } from '@material-tailwind/react'
-import { type } from 'os'
-import { parse } from 'path'
 import { registrationData } from '../model/registration-schema'
 
 function validate(formData: FormData) {
@@ -8,13 +5,15 @@ function validate(formData: FormData) {
 	try {
 		registrationData.parse(data)
 	} catch (error) {
+		console.error(error)
+
 		// TODO: Показать пользователю сообщение об ошибке
 	}
 }
 
 export function RegisterPage() {
 	return (
-		<form onSubmit={e => validate(new FormData(e.target))}>
+		<form onSubmit={e => validate(new FormData(e.currentTarget))}>
 			<label htmlFor='email'>Электронная почта</label>
 			<input id='email' name='email' required />
 
